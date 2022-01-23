@@ -1,5 +1,5 @@
 import React from 'react';
-import { HeaderStyle, Imagen } from './Styles/HeaderStyle';
+import { HeaderStyle } from './Styles/HeaderStyle';
 import logo from '../img/clarovideo-logo-sitio.svg';
 import { Link } from 'react-router-dom';
 

@@ -1,8 +1,8 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { PeliculaStyle } from './Styles/PeliculaStyle';
 import { getResumen } from '../conexion/conexion';
-import { agregarDetalles, removerDescripcion } from '../actions/peliculas';
+import { agregarDetalles } from '../actions/peliculas';
 
 
 export const Pelicula = ({ pelicula }) => {
