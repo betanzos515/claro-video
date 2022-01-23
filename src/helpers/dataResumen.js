@@ -1,0 +1,30 @@
+/*
+{
+    response:{
+        group:{
+            common:{
+                title,
+                large_description,
+                image-large,
+                extendedcommont:{
+                    genres:{
+                        genre:[
+                            {
+                                name
+                            }
+                        ]
+                    }
+                    media:{
+                        originaltitle,
+                        publisyear,
+                        rating:{
+                            code
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+*/
