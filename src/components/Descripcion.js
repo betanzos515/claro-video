@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { DescripcionStyle } from './Styles/DescripcionStyle';
 
 export const Descripcion = () => {
   const state = useSelector( state => state.descripcion);
   
-
+  const navegador = useNavigate();
   const [ stateDescripcion, setDescripcion ] = useState({  });
   let componente;
   const { descripcion } = state;
@@ -32,7 +33,8 @@ export const Descripcion = () => {
       </>
     )
   }else {
-    componente = <p>No existen consultas, regresa a la página principal</p>
+    // componente = <p>No existen consultas, regresa a la página principal</p>
+    navegador('/',{ replace:true })
   }
   
   return (
