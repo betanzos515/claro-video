@@ -4,18 +4,18 @@ import { DescripcionStyle } from './Styles/DescripcionStyle';
 
 export const Descripcion = () => {
   const state = useSelector( state => state.descripcion);
+  
+
+  const [ stateDescripcion, setDescripcion ] = useState({  });
   let componente;
   const { descripcion } = state;
-  const [ stateDescripcion, setDescripcion ] = useState( JSON.parse(localStorage.getItem('descripcion')));
   
-  // eslint-disable-next-line
+  //eslint-disable-next-line
   useEffect(()=>{
-    if(descripcion){
       setDescripcion(descripcion);
-    }
   });
   
-  if(Object.keys(stateDescripcion).length > 0 ){
+  if(stateDescripcion){
     componente = (
       <>
         <img src={ stateDescripcion.imagen } alt={ stateDescripcion.titulo }/>
@@ -26,13 +26,13 @@ export const Descripcion = () => {
               {`${stateDescripcion.titulo_original} (${stateDescripcion.año_publicacion}) ${stateDescripcion.clasificacion}`}
             </p>
             <p className='descripcion'>{stateDescripcion.descripcion}</p>
-            <div className='generos'> Géneros : <div className='lista-generos'>{stateDescripcion.generos.map(genero=> <p key={ genero }>{genero}</p>)} </div></div>
+            <div className='generos'> Géneros : <div className='lista-generos'>{ stateDescripcion.generos ? stateDescripcion.generos.map(genero=> <p key={ genero }>{genero}</p>) : [] } </div></div>
           </div>
         </div>
       </>
     )
   }else {
-    componente = <p></p>
+    componente = <p>No existen consultas, regresa a la página principal</p>
   }
   
   return (
