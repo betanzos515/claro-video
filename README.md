@@ -7,7 +7,8 @@
 ## Al terminar la descarga ejecutamos el proyecto con
 ### `npm start || yarn start`
 
-Este proyecto está desplegado en : https://claro-video-prueba.netlify.app/
+Este proyecto está desplegado en : 
+### https://claro-video-prueba.netlify.app/
 
 Tecnologias de desarrollo:
     * React
