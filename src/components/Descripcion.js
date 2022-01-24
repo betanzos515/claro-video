@@ -1,30 +1,39 @@
+import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { DescripcionStyle } from './Styles/DescripcionStyle';
 
 export const Descripcion = () => {
-  
   const state = useSelector( state => state.descripcion);
-  const { descripcion } = state;
   let componente;
-  if(Object.keys(descripcion).length > 0){
+  const { descripcion } = state;
+  const [ stateDescripcion, setDescripcion ] = useState( JSON.parse(localStorage.getItem('descripcion')));
+
+  useEffect(()=>{
+    if(descripcion){
+      setDescripcion(descripcion);
+    }
+  });
+  console.log(stateDescripcion);
+  if(Object.keys(stateDescripcion).length > 0 ){
     componente = (
       <>
-        <img src={ descripcion.imagen } alt={ descripcion.titulo }/>
+        <img src={ stateDescripcion.imagen } alt={ stateDescripcion.titulo }/>
         <div className='info'>
-          <h2>{ descripcion.titulo}</h2>
+          <h2>{ stateDescripcion.titulo}</h2>
           <div>
             <p className='titulo-original'>
-              {`${descripcion.titulo_original} (${descripcion.año_publicacion}) ${descripcion.clasificacion}`}
+              {`${stateDescripcion.titulo_original} (${stateDescripcion.año_publicacion}) ${stateDescripcion.clasificacion}`}
             </p>
-            <p className='descripcion'>{descripcion.descripcion}</p>
-            <p className='generos'> Géneros : <div className='lista-generos'>{descripcion.generos.map(genero=> <p>{genero}</p>)} </div></p>
+            <p className='descripcion'>{stateDescripcion.descripcion}</p>
+            <div className='generos'> Géneros : <div className='lista-generos'>{stateDescripcion.generos.map(genero=> <p key={ genero }>{genero}</p>)} </div></div>
           </div>
         </div>
       </>
     )
-  }else{
+  }else {
     componente = <p></p>
   }
+  
   return (
     <DescripcionStyle>
       {componente}

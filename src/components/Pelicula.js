@@ -15,6 +15,7 @@ export const Pelicula = ({ pelicula }) => {
   const handleClick = async () =>{
     let data = await getResumen(id);
     dispatch(agregarDetalles(data));
+    localStorage.setItem('descripcion',JSON.stringify(data));
     navegar('/descripcion',{ replace:true})
   }
 
