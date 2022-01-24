@@ -7,7 +7,8 @@ export const Descripcion = () => {
   let componente;
   const { descripcion } = state;
   const [ stateDescripcion, setDescripcion ] = useState( JSON.parse(localStorage.getItem('descripcion')));
-
+  
+  // eslint-disable-next-line
   useEffect(()=>{
     if(descripcion){
       setDescripcion(descripcion);
