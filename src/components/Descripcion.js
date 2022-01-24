@@ -14,7 +14,7 @@ export const Descripcion = () => {
       setDescripcion(descripcion);
     }
   });
-  console.log(stateDescripcion);
+  
   if(Object.keys(stateDescripcion).length > 0 ){
     componente = (
       <>
