@@ -5,6 +5,7 @@ export const PeliculaStyle = styled.div`
     height: 18rem;
     margin-top: 2rem;
     position: relative;
+    margin-right: 1rem;
     
     img{
         width: 100%;
@@ -31,14 +32,15 @@ export const PeliculaStyle = styled.div`
     .capa-play:hover{
         opacity:.6;
         cursor:pointer;
-        transform: scale(1.1);
+        transform: scale(1.1);œ
     }
 
-    @media only screen and (max-width: '768px'){
-        flex-basis: calc(33.3% - 1rem);
+    @media screen and (max-width:768px){
+        flex-basis: calc(33.3% - 1rem);        
+    }
+    
+    @media screen and (max-width:420px){
+        flex-basis: calc(50% - 1rem );
     }
 
-    @media only screen and (max-width: '420px'){
-        flex-basis: calc(50% - 1rem);
-    }
 `;

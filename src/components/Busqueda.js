@@ -13,7 +13,7 @@ export const Busqueda = ({ setValor }) => {
   return (
     <>
         <BusquedaStyle className='busqueda'>
-            <label>Buscar :</label><input type='text' onChange={ handleChange }/>
+            <label><i class="fas fa-search"></i></label><input type='text' onChange={ handleChange } placeholder='Buscar pelicula'/>
         </BusquedaStyle>
     </>
   );

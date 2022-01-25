@@ -7,6 +7,9 @@
 ## Al terminar la descarga ejecutamos el proyecto con
 ### `npm start || yarn start`
 
+## Para poder disparar los test ejecutamos el siguiente comando
+### `npm test || yarn test`
+
 Este proyecto está desplegado en : 
 ### https://claro-video-prueba.netlify.app/
 

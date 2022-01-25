@@ -5,10 +5,11 @@ export const BusquedaStyle = styled.div`
     align-items: center;
     justify-content: center;
     flex-basis : calc(100%);
+    width:100%;
     height: 5rem;
     label{
         font-size: 2.5 rem;
-        margin-right: 5rem;
+        margin-right: 1rem;
     }
 
     input{
@@ -21,6 +22,24 @@ export const BusquedaStyle = styled.div`
         background: black;
         border: 1px solid white;
         color: white;
+    }
+
+    @media screen and (max-width:768px){
+        input{
+            flex-basis:30%;
+        }     
+        label{
+            margin-right:1rem;
+        }
+    }
+
+    @media screen and (max-width:400px){
+        input{
+            flex-basis:10%;
+        }     
+        label{
+            display: none;
+        }
     }
 `;
 

@@ -13,6 +13,11 @@ export const HeaderStyle = styled.header`
     img{
         width:90%
     }
+    @media screen and (max-width:768px){
+        img{
+            width: 60%;
+        }        
+    }
 `;
     
 

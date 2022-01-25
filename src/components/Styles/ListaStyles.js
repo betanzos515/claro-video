@@ -7,4 +7,7 @@ export const ListaStyled = styled.div`
     flex-wrap: wrap;
     justify-content: flex-start;
     margin: 2rem 0 4rem 0; 
+    @media screen and (max-width:768px){
+        width: 95%;
+    }
 `;

@@ -19,15 +19,19 @@ export const Descripcion = () => {
   if(stateDescripcion){
     componente = (
       <>
-        <img src={ stateDescripcion.imagen } alt={ stateDescripcion.titulo }/>
+        <div className='imagen-descripcion'>
+          <img src={ stateDescripcion.imagen } alt={ stateDescripcion.titulo }/>
+        </div>
         <div className='info'>
           <h2>{ stateDescripcion.titulo}</h2>
           <div>
             <p className='titulo-original'>
-              {`${stateDescripcion.titulo_original} (${stateDescripcion.año_publicacion}) ${stateDescripcion.clasificacion}`}
+              {`${stateDescripcion.titulo_original ? stateDescripcion.titulo_original : '' } (${stateDescripcion.año_publicacion}) ${stateDescripcion.clasificacion}`}
             </p>
             <p className='descripcion'>{stateDescripcion.descripcion}</p>
-            <div className='generos'> Géneros : <div className='lista-generos'>{ stateDescripcion.generos ? stateDescripcion.generos.map(genero=> <p key={ genero }>{genero}</p>) : [] } </div></div>
+            <div className='generos'>
+              <p>Géneros :</p>
+              <div className='lista-generos'>{ stateDescripcion.generos ? stateDescripcion.generos.map(genero=> <p key={ genero }>{genero}</p>) : [] } </div></div>
           </div>
         </div>
       </>
